@@ -1,0 +1,27 @@
+# nvram
+allow mediacodec nvdata_file:dir rw_dir_perms;
+allow mediacodec nvdata_file:file create_file_perms;
+allow mediacodec ccci_device:chr_file rw_file_perms;
+
+# video codec
+allow mediacodec Vcodec_device:chr_file rw_file_perms;
+allow mediacodec devmap_device:chr_file { ioctl r_file_perms };
+allow mediacodec mtk_smi_device:chr_file { ioctl read open };
+allow mediacodec proc:file { getattr open read ioctl };
+
+allow mediacodec sysfs:file { open read write };
+allow mediacodec sysfs_devinfo:file { open read write };
+allow mediacodec proc_meminfo:file { getattr open read };
+
+allow mediacodec property_socket:sock_file write;
+allow mediacodec init:unix_stream_socket connectto;
+
+# omx
+allow mediacodec sysfs_ddr_type:file r_file_perms;
+allow mediacodec sysfs_membw:file { open rw_file_perms };
+
+# M4U
+allow mediacodec M4U_device_device:chr_file rw_file_perms;
+
+# PQ
+allow mediacodec pq_service:service_manager find;

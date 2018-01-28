@@ -4,13 +4,14 @@ PRODUCT_RELEASE_NAME := Power_3
 EXTENDED_FONT_FOOTPRINT := true
 
 # Inherit some common stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/ulefone/power_3/device_power_3.mk)
 
-# Configure dalvik heap
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
+# Configurations
+$(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
+$(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := power_3

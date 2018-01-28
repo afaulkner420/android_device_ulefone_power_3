@@ -14,4 +14,4 @@ MTK_APPENDED_DTB_SUPPORT := yes
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 
 #Prebuilt Kernel
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilts/kernel
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilts/kernel
