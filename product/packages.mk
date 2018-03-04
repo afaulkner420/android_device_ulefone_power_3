@@ -30,9 +30,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libwpa_client \
     hostapd \
-    hostapd_cli \
-    wpa_supplicant \
-    wpa_supplicant.conf
+    wpa_supplicant
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -40,12 +38,8 @@ PRODUCT_PACKAGES += \
     libnl_2
 
 # Mtk display
-PRODUCT_PACKAGES += \
-    libui_ext \
-    libgui_ext \
-    guiext-server \
-    libgralloc_extra \
-    librrc
+#PRODUCT_PACKAGES += \
+#    librrc
 
 # Sim app
 PRODUCT_PACKAGES += Stk
@@ -56,6 +50,8 @@ PRODUCT_PACKAGES += \
     libshim_gui \
     libshim_snd \
     libshim_ui \
+    libshim_idump \
+    libshim_png \
     libshim_xlog
 
 # Power HAL

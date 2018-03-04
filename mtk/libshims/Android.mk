@@ -53,3 +53,22 @@ LOCAL_SHARED_LIBRARIES := liblog
 LOCAL_MODULE := libshim_xlog
 include $(BUILD_SHARED_LIBRARY)
 
+## libshim_gui
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := \
+    mtk_idump.cpp
+
+LOCAL_SHARED_LIBRARIES := libbinder libgui libui
+LOCAL_MODULE := libshim_idump
+include $(BUILD_SHARED_LIBRARY)
+
+## libshim_gui
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := \
+    mtk_png.cpp
+
+LOCAL_SHARED_LIBRARIES := libbinder libmedia libskia libpng
+LOCAL_MODULE := libshim_png
+include $(BUILD_SHARED_LIBRARY)

@@ -1,6 +1,6 @@
 # Recovery
 # Uncomment RECOVERY_VARIANT to build twrp
-RECOVERY_VARIANT=twrp
+#RECOVERY_VARIANT=twrp
 
 # TWRP stuff
 ifeq ($(RECOVERY_VARIANT), twrp)
@@ -44,7 +44,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
 BOARD_SUPPRESS_EMMC_WIPE := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
-TARGET_RECOVERY_FSTAB := device/ulefone/power_3/rootdir/fstab.mt6763
+TARGET_RECOVERY_FSTAB := device/ulefone/power_3/rootdir/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 endif
