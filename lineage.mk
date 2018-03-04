@@ -5,6 +5,7 @@ EXTENDED_FONT_FOOTPRINT := true
 
 # Inherit some common stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
+$(call inherit-product, vendor/cm/config/cmsdk_common.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/ulefone/power_3/device_power_3.mk)
