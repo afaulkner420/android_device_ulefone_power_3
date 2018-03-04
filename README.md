@@ -20,7 +20,8 @@ Current state
 
 Working :
 
-- TBC
+- Boots
+- SurfaceFlinger
 
 
 Not working :
