@@ -144,7 +144,7 @@ static int device_open(const hw_module_t *module, const char *name, hw_device_t 
     }
 
     device->base.common.tag = HARDWARE_DEVICE_TAG;
-    device->base.common.version = FINGERPRINT_MODULE_API_VERSION_2_0;
+    device->base.common.version = FINGERPRINT_MODULE_API_VERSION_2_1;
     device->base.common.module = (hw_module_t *) module;
     device->base.common.close = device_close;
 
@@ -170,7 +170,7 @@ static struct hw_module_methods_t module_methods = {
 fingerprint_module_t HAL_MODULE_INFO_SYM = {
     .common = {
         .tag = HARDWARE_MODULE_TAG,
-        .module_api_version = FINGERPRINT_MODULE_API_VERSION_2_0,
+        .module_api_version = FINGERPRINT_MODULE_API_VERSION_2_1,
         .hal_api_version = HARDWARE_HAL_API_VERSION,
         .id = FINGERPRINT_HARDWARE_MODULE_ID,
         .name = "Fingerprint Wrapper",
