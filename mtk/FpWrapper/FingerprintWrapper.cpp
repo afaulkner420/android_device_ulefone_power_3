@@ -27,27 +27,28 @@ static union {
 
 static bool ensure_vendor_module_is_loaded(void)
 {
+    int rv = -1;
     android::Mutex::Autolock lock(vendor_mutex);
 
     if (!vendor.module) {
         if (!access("/dev/sunwave_fp", F_OK)) {
-            int rv = hw_get_module("sunwave.fingerprint", &vendor.hw_module);
+            rv = hw_get_module("sunwave.fingerprint", &vendor.hw_module);
         } else if (!access("/dev/goodix_fp", F_OK)) {
-            int rv = hw_get_module("fingerprint", &vendor.hw_module);
+            rv = hw_get_module("fingerprint", &vendor.hw_module);
         } else if (!access("/dev/fpsdev0", F_OK)) {
-            int rv = hw_get_module("cdfinger.fingerprint", &vendor.hw_module);
+            rv = hw_get_module("cdfinger.fingerprint", &vendor.hw_module);
         } else if (!access("/dev/blfp", F_OK)) {
-            int rv = hw_get_module("blestech.fingerprint", &vendor.hw_module);
+            rv = hw_get_module("blestech.fingerprint", &vendor.hw_module);
         } else if (!access("/dev/madev0", F_OK)) {
-            int rv = hw_get_module("microarray.fingerprint", &vendor.hw_module);
+            rv = hw_get_module("microarray.fingerprint", &vendor.hw_module);
         } else if (!access("/dev/silead_fp_dev", F_OK)) {
-            int rv = hw_get_module("silead.fingerprint", &vendor.hw_module);
+            rv = hw_get_module("silead.fingerprint", &vendor.hw_module);
         } else if (!access("/dev/esfp0", F_OK)) {
-            int rv = hw_get_module("egistec.fingerprint", &vendor.hw_module);
+            rv = hw_get_module("egistec.fingerprint", &vendor.hw_module);
         } else {
-            ALOGE("Unable to access any fingerprint nodes!", rv);
+            ALOGE("Unable to access any fingerprint nodes!");
         }
-        if (rv) {
+        if (rv != 0) {
             ALOGE("failed to open vendor module, error %d", rv);
             vendor.module = NULL;
         } else {
