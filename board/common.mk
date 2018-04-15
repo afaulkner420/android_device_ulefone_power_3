@@ -18,4 +18,4 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 BLOCK_BASED_OTA :=false
 
 # Force linking shim
-LINKER_FORCED_SHIM_LIBS := /system/lib/liblog.so|libshim_xlog.so:/system/lib64/liblog.so|libshim_xlog.so:/system/lib/libui.so|libshim_idump.so:/system/lib64/libui.so|libshim_idump.so::/system/lib/libgui.so|libshim_idump.so:/system/lib64/libgui.so|libshim_idump.so:/system/vendor/lib/hw/camera.mt6763.so|libshim_png.so:/system/vendor/lib/hw/camera.mt6763.so|libshim_png.so:/system/lib/libmedia.so|libshim_snd.so:/system/lib64/libmedia.so|libshim_snd.so
+LINKER_FORCED_SHIM_LIBS := /system/lib/liblog.so|libshim_xlog.so:/system/lib64/liblog.so|libshim_xlog.so:/system/vendor/lib/hw/hwcomposer.mt6763.so|libshim_idump.so:/system/vendor/lib64/hw/hwcomposer.mt6763.so|libshim_idump.so:/system/vendor/lib/hw/camera.mt6763.so|libshim_png.so:/system/vendor/lib/hw/camera.mt6763.so|libshim_png.so

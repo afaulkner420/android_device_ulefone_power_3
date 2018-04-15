@@ -31,7 +31,7 @@ on post-fs-data
 
 	write /proc/bootprof "tkcore:configure log path END"
 
-service teed /system/vendor/bin/teed /dev/block/platform/bootdevice/by-name/sdrpmb
+service teed /vendor/bin/teed /dev/block/platform/bootdevice/by-name/sdrpmb
 	user system
 	group system inet
 	class core
