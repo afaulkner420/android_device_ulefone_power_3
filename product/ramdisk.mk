@@ -12,6 +12,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/ueventd.mt6763.rc:root/ueventd.mt6763.rc \
     $(LOCAL_PATH)/rootdir/init.recovery.mt6763.rc:root/init.recovery.mt6763.rc \
     $(LOCAL_PATH)/rootdir/init.aee.rc:root/init.aee.rc \
+    $(LOCAL_PATH)/rootdir/init.ril.rc:root/init.ril.rc \
     $(LOCAL_PATH)/rootdir/init.common_svc.rc:root/init.common_svc.rc \
     $(LOCAL_PATH)/rootdir/init.epdg.rc:root/init.epdg.rc \
     $(LOCAL_PATH)/rootdir/init.fingerprint.rc:root/init.fingerprint.rc \

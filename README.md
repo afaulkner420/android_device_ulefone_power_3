@@ -22,11 +22,17 @@ Working :
 
 - Boots
 - SurfaceFlinger
+- Camera
+- Video Camera
 
 
 Not working :
 
-- TBC
+- Ril
+- Wifi
+- Audio
+- Bluetooth
+- GPS/AGPS
 
 Change log
 ----------
@@ -40,6 +46,7 @@ Credits & Thanks
 - Moyster
 - Visi0nary
 - Fire855
+- DidntRead
 
 And about anyone else I've forgotten! ;)
 
