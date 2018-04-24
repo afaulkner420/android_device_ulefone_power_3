@@ -1,5 +1,6 @@
 #include <stdint.h>
 #include <fcntl.h>
+#include <inttypes.h>
 #include <sys/socket.h>
 #include <netlink/genl/genl.h>
 #include <netlink/genl/family.h>
@@ -161,8 +162,8 @@ protected:
             len -= NLA_HDRLEN;
         }
 
-        ALOGD("wiphy_id=%d, if_id=%d, Id=%0x, subcmd=%d, len=%d, expected len=%d", wiphy_id, if_id, id, subcmd, len,
-                    sizeof(*mCapabilities));
+        ALOGD("wiphy_id=%d, if_id=%d, Id=%0x, subcmd=%d, len=%d, expected len=%lu", wiphy_id, if_id, id, subcmd, len,
+                    (unsigned long) sizeof(*mCapabilities));
         if (payload)
             memcpy(mCapabilities, payload, min(len, (int) sizeof(*mCapabilities)));
 
@@ -214,8 +215,8 @@ protected:
         void *data = reply.get_vendor_data();
         int len = reply.get_vendor_data_len();
 
-        ALOGD("Id = %0x, subcmd = %d, len = %d, expected len = %d", id, subcmd, len,
-                sizeof(*mChannelInfo));
+        ALOGD("Id = %0x, subcmd = %d, len = %d, expected len = %lu", id, subcmd, len,
+                (unsigned long) sizeof(*mChannelInfo));
 
         memcpy(mChannelInfo, data, min(len, (int) sizeof(*mChannelInfo)));
 
@@ -233,7 +234,7 @@ public:
     EnableResponderCommand(wifi_interface_handle iface, int id, wifi_channel_info channel_hint,
             unsigned max_duration_seconds, wifi_channel_info *channel_used)
             : WifiCommand(iface, 0), mChannelInfo(channel_hint),
-            m_max_duration_sec(max_duration_seconds), mChannelUsed(channel_used)
+            mChannelUsed(channel_used), m_max_duration_sec(max_duration_seconds)
     {
         memset(mChannelUsed, 0 , sizeof(*mChannelUsed));
 
@@ -266,8 +267,8 @@ protected:
         void *data = reply.get_vendor_data();
         int len = reply.get_vendor_data_len();
 
-        ALOGD("Id = %0x, subcmd = %d, len = %d, expected len = %d", id, subcmd, len,
-                sizeof(*mChannelUsed));
+        ALOGD("Id = %0x, subcmd = %d, len = %d, expected len = %lu", id, subcmd, len,
+                (unsigned long) sizeof(*mChannelUsed));
 
         memcpy(mChannelUsed, data, min(len, (int) sizeof(*mChannelUsed)));
 
@@ -593,7 +594,7 @@ public:
                         totalCnt++;
                         ALOGI("retrived rtt_result : \n\tburst_num :%d, measurement_number : %d, success_number : %d\n"
                                 "\tnumber_per_burst_peer : %d, status : %s, retry_after_duration : %d s\n"
-                                "\trssi : %d dbm, rx_rate : %d Kbps, rtt : %llu ns, rtt_sd : %llu\n"
+                                "\trssi : %d dbm, rx_rate : %d Kbps, rtt : %" PRIu64 " ns, rtt_sd : %" PRIu64 "\n"
                                 "\tdistance : %d, burst_duration : %d ms, negotiated_burst_num : %d\n",
                                 rtt_result->burst_num, rtt_result->measurement_number,
                                 rtt_result->success_number, rtt_result->number_per_burst_peer,
