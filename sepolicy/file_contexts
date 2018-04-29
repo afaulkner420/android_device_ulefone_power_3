@@ -1,5 +1,5 @@
 # Services
-/(system|system\/vendor|vendor)/bin/6620_launcher                                       u:object_r:conn_launcher_exec:s0
+/(system|system\/vendor|vendor)/bin/wmt_launcher                                       u:object_r:wmt_launcher_exec:s0
 /(system|system\/vendor|vendor)/bin/ccci_fsd                                            u:object_r:ccci_fsd_exec:s0
 /(system|system\/vendor|vendor)/bin/ccci_mdinit                                         u:object_r:ccci_mdinit_exec:s0
 /(system|system\/vendor|vendor)/bin/md_ctrl                                             u:object_r:md_ctrl_exec:s0
@@ -18,9 +18,6 @@
 /(system|system\/vendor|vendor)/bin/wifi2agps                                           u:object_r:wifi2agps_exec:s0
 /(system|system\/vendor|vendor)/bin/wmt_loader                                          u:object_r:wmt_loader_exec:s0
 /(system|system\/vendor|vendor)/bin/em_svr                                              u:object_r:em_svr_exec:s0
-
-# Meizupshelper
-/(system|system\/vendor|vendor)/bin/meizupshelper                                       u:object_r:meizupshelper_exec:s0
 
 # Files from firmware/nv partitions
 /protect_f(/.*)?                                                u:object_r:protect_f_data_file:s0
@@ -113,7 +110,6 @@
 /sys/block/mmcblk0/queue/scheduler                              u:object_r:perf_control_sysfs:s0
 /sys/devices/.*/queue/scheduler                                 u:object_r:perf_control_sysfs:s0
 /sys/devices/platform/mx-gs/gesture_control                     u:object_r:smartwake_sysfs:s0
-/sys/class/meizu/ps/ps_calibration                              u:object_r:meizu_ps_calibration_trigger:s0
 /sys/devices/virtual/thermal/thermal_zone[0-9]+/temp            u:object_r:thermal_sysfs:s0
 
 # Config/Runtime files
