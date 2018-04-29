@@ -20,7 +20,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.allow.mock.location=1 \
-    ro.telephony.ril_class=MT6763 \
+    ro.telephony.ril_class=MediaTekRIL \
     ro.telephony.ril.config=fakeiccid \
     persist.service.acm.enable=0 \
     ro.mount.fs=EXT4
