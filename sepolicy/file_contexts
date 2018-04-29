@@ -14,7 +14,7 @@
 /(system|system\/vendor|vendor)/bin/pq                                                  u:object_r:pq_exec:s0
 /(system|system\/vendor|vendor)/bin/terservice                                          u:object_r:terservice_exec:s0
 /(system|system\/vendor|vendor)/bin/thermal_manager                                     u:object_r:thermal_manager_exec:s0
-/(system|system\/vendor|vendor)/bin/mtkrild                                             u:object_r:ril-daemon-mtk_exec:s0
+/(system|system\/vendor|vendor)/bin/mtkfusionrild                                             u:object_r:ril-daemon-mtk_exec:s0
 /(system|system\/vendor|vendor)/bin/wifi2agps                                           u:object_r:wifi2agps_exec:s0
 /(system|system\/vendor|vendor)/bin/wmt_loader                                          u:object_r:wmt_loader_exec:s0
 /(system|system\/vendor|vendor)/bin/em_svr                                              u:object_r:em_svr_exec:s0

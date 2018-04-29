@@ -25,12 +25,12 @@ Working :
 - Camera
 - Video Camera
 - Audio
+- Wifi
+- Bluetooth
 
 Not working :
 
 - Ril
-- Wifi
-- Bluetooth
 - GPS/AGPS
 
 Change log
