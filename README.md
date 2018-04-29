@@ -24,13 +24,12 @@ Working :
 - SurfaceFlinger
 - Camera
 - Video Camera
-
+- Audio
 
 Not working :
 
 - Ril
 - Wifi
-- Audio
 - Bluetooth
 - GPS/AGPS
 
