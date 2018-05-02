@@ -50,13 +50,13 @@ binder_service(pq)
 # Purpose : Support pq_service
 
 allow pq graphics_device:dir search;
-allow pq pq_service:service_manager add;
+#allow pq pq_service:service_manager add;
 
 
 # Date : WK15.39
 # Operation : Migration
 # Purpose : Allow permission check
-allow pq pq_service:service_manager { find };
+#allow pq pq_service:service_manager { find };
 allow pq permission_service:service_manager { find };
 
 # Date : WK16.42

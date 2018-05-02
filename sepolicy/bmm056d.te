@@ -24,14 +24,14 @@ allow bmm056d sensor_data_file:dir create_dir_perms;
 allow bmm056d sensor_data_file:file create_file_perms;
 allow bmm056d system_sensor_data_file:dir create_dir_perms;
 allow bmm056d system_sensor_data_file:file create_file_perms;
-allow bmm056d bmm050_sensor_log_file:file create_file_perms;
+#allow bmm056d bmm050_sensor_log_file:file create_file_perms;
 allow bmm056d sysfs:file w_file_perms;
-allow bmm056d sysfs_gsensor_file:dir create_dir_perms;
-allow bmm056d sysfs_gsensor_file:file create_file_perms;
-allow bmm056d sysfs_gsensor_file:lnk_file read;
-allow bmm056d sysfs_msensor_file:dir create_dir_perms;
-allow bmm056d sysfs_msensor_file:file create_file_perms;
-allow bmm056d sysfs_msensor_file:lnk_file read;
+#allow bmm056d sysfs_gsensor_file:dir create_dir_perms;
+#allow bmm056d sysfs_gsensor_file:file create_file_perms;
+#allow bmm056d sysfs_gsensor_file:lnk_file read;
+#allow bmm056d sysfs_msensor_file:dir create_dir_perms;
+#allow bmm056d sysfs_msensor_file:file create_file_perms;
+#allow bmm056d sysfs_msensor_file:lnk_file read;
 
 # Operate data partation directly, need modify later,e.g. use "data/misc/sensor".
 # for msensor daemon access "data/misc".

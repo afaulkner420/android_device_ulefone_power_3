@@ -43,7 +43,7 @@ set_prop(viarild, radio_prop)
 set_prop(viarild, net_radio_prop)
 set_prop(viarild, system_radio_prop)
 set_prop(viarild, persist_ril_prop)
-set_prop(viarild, cdma_prop)
+#set_prop(viarild, cdma_prop)
 set_prop(viarild, ril_cdma_report_prop)
 set_prop(viarild, ril_mux_report_case_prop)
 auditallow viarild system_radio_prop:property_service set;

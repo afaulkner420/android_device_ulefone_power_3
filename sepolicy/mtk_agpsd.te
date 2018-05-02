@@ -49,7 +49,7 @@ allow mtk_agpsd nvcfg_file:file create_file_perms;
 allow mtk_agpsd mnld:unix_dgram_socket sendto;
 
 # Send LPPe request to LPPe Service
-allow mtk_agpsd system_app:unix_dgram_socket sendto;
+#allow mtk_agpsd system_app:unix_dgram_socket sendto;
 
 # Allow access ccci_version file when call ccci_get_node_name in viagpsrpc.c
 allow mtk_agpsd sysfs_ccci:dir search;

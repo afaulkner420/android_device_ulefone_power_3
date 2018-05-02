@@ -36,7 +36,7 @@ allow ged_srv           property_socket:sock_file write;
 allow ged_srv           init:unix_stream_socket connectto;
 
 # Perfservice
-allow ged_srv           mtk_perf_service:service_manager find;
+#allow ged_srv           mtk_perf_service:service_manager find;
 allow ged_srv           system_server:binder call;
 allow ged_srv 		system_server:dir search;
 allow ged_srv 		system_server:file {read open getattr};
@@ -56,7 +56,7 @@ binder_use(ged_srv)
 binder_service(ged_srv)
 binder_call(ged_srv, system_server)
 binder_call(ged_srv, audioserver)
-allow ged_srv           gas_srv_service:service_manager     {add find};
+#allow ged_srv           gas_srv_service:service_manager     {add find};
 allow ged_srv           audioserver_service:service_manager find;
 
 # For /proc/[pid]/cmdline accessing
@@ -84,12 +84,12 @@ allow ged_srv           proc_ged:file                       {open read write ioc
 allow ged_srv           sysfs:file                          {read write open};
 
 # Binder interaction
-allow ged_srv           mtk_perf_service:service_manager    find;
-allow surfaceflinger    gas_srv_service:service_manager     find;
-allow platform_app      gas_srv_service:service_manager     find;
-allow priv_app          gas_srv_service:service_manager     find;
-allow system_app        gas_srv_service:service_manager     find;
-allow untrusted_app     gas_srv_service:service_manager     find;
+#allow ged_srv           mtk_perf_service:service_manager    find;
+#allow surfaceflinger    gas_srv_service:service_manager     find;
+#allow platform_app      gas_srv_service:service_manager     find;
+#allow priv_app          gas_srv_service:service_manager     find;
+#allow system_app        gas_srv_service:service_manager     find;
+#allow untrusted_app     gas_srv_service:service_manager     find;
 
 # GAS service section
 # ==============================================================================

@@ -58,8 +58,8 @@ allow fingerprintd fingerprintd_data_file:fifo_file { create open read write };
 #persist.blestech.nav	u:object_r:fingerprint_prop:s0
 
 #for tee
-allow fingerprintd teei_fp_device:chr_file { read write open ioctl };
-allow fingerprintd teei_fp_device:chr_file rw_file_perms;
+#allow fingerprintd teei_fp_device:chr_file { read write open ioctl };
+#allow fingerprintd teei_fp_device:chr_file rw_file_perms;
 allow fingerprintd self:netlink_socket { read bind create write getattr setopt };
 
 type blestech_fp_device, dev_type;

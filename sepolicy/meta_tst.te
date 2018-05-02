@@ -358,7 +358,7 @@ allow meta_tst property_socket:sock_file write;
 allow meta_tst socket_device:sock_file create;
 allow meta_tst persist_service_atci_prop:property_service set;
 allow meta_tst atcid:unix_stream_socket connectto;
-allow meta_tst adb_atci_socket:sock_file write;
+#allow meta_tst adb_atci_socket:sock_file write;
 
 #Date: W17.33
 #Purpose : for meta_tst to set modem mode in atm.

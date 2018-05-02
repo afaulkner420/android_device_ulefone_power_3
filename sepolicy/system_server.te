@@ -164,7 +164,7 @@ allow system_server meta_connecttype_prop:property_service set;
 # Operation : Wifi framework modify persist.logmuch.detect.
 # Purpose : Wifi framework modify persist.logmuch.detect.Set
 # persist.logmuch.detect to false to disable log much detect.
-allow system_server logmuch_prop:property_service set;
+#allow system_server logmuch_prop:property_service set;
 
 # Vanzo:zhengyulong on: Fri, 14 Oct 2016 16:20:02 +0800
 # add for sunwave_fingprinter

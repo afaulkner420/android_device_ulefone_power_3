@@ -15,7 +15,7 @@ allow usbdongled netdomain:fd use;
 
 # property service
 set_prop(usbdongled, radio_prop)
-set_prop(usbdongled, ctl_ril3gd_prop)
+#set_prop(usbdongled, ctl_ril3gd_prop)
 
 
 allow usbdongled system_file:file x_file_perms;

@@ -26,7 +26,7 @@ init_daemon_domain(dm_agent_binder)
 # Date : WK14.37
 # Operation : access DmAgent by binder 
 # Purpose : ensure can access DmAgent api normally.
-allow dm_agent_binder dm_agent_binder_service:service_manager add;
+#allow dm_agent_binder dm_agent_binder_service:service_manager add;
 
 # Date : WK14.37
 # Operation : access DmAgent by binder 
@@ -78,7 +78,7 @@ allow dm_agent_binder bootdevice_block_device:blk_file rw_file_perms;
 # Date : WK14.42
 # Operation : Basic UT 
 # Purpose : Allow DmAgent to set properties.
-allow dm_agent_binder persist_dm_prop:property_service set;
+#allow dm_agent_binder persist_dm_prop:property_service set;
 
 # Date : WK14.43
 # Operation : Basic UT 

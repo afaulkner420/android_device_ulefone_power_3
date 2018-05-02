@@ -26,10 +26,10 @@ init_daemon_domain(terservice)
 # Date : 2014/09/18 (WK14.38)
 # Operation : Migration
 # Purpose : allow register terservice service in servicemanager.
-allow terservice terservice_service:service_manager add;
+#allow terservice terservice_service:service_manager add;
 
 # property service
-set_prop(terservice, terservice_prop)
+#set_prop(terservice, terservice_prop)
 
 # ccci ioctl
 allow terservice ccci_device:chr_file { read write ioctl open };

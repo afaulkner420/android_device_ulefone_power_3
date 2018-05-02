@@ -28,4 +28,4 @@ binder_use(mtk_crossmount)
 binder_call(mtk_crossmount, mtk_crossmount)
 binder_service(mtk_crossmount)
 
-allow mtk_crossmount mtk_crossmount_service:service_manager { add find };
+#allow mtk_crossmount mtk_crossmount_service:service_manager { add find };

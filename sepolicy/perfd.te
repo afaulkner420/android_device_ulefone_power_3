@@ -38,7 +38,7 @@ allow perfd           init:unix_stream_socket connectto;
 allow init socket_device:sock_file write;
 
 # Perfservice
-allow perfd           mtk_perf_service:service_manager find;
+#allow perfd           mtk_perf_service:service_manager find;
 allow perfd           system_server:binder call;
 
 # ==============================================================================
@@ -55,7 +55,7 @@ allow perfd           system_server:binder call;
 binder_use(perfd)
 binder_service(perfd)
 binder_call(perfd, system_server)
-allow perfd           gas_srv_service:service_manager     add;
+#allow perfd           gas_srv_service:service_manager     add;
 
 # For /proc/[pid]/cmdline accessing
 typeattribute           perfd                             mlstrustedsubject;
@@ -82,9 +82,9 @@ allow perfd           proc_ged:file                       {open read write ioctl
 allow perfd           sysfs:file                          {read write open};
 
 # Binder interaction
-allow perfd             mtk_perf_service:service_manager    find;
-allow surfaceflinger    gas_srv_service:service_manager     find;
-allow platform_app      gas_srv_service:service_manager     find;
-allow priv_app          gas_srv_service:service_manager     find;
-allow system_app        gas_srv_service:service_manager     find;
-allow untrusted_app     gas_srv_service:service_manager     find;
+#allow perfd             mtk_perf_service:service_manager    find;
+#allow surfaceflinger    gas_srv_service:service_manager     find;
+#allow platform_app      gas_srv_service:service_manager     find;
+#allow priv_app          gas_srv_service:service_manager     find;
+#allow system_app        gas_srv_service:service_manager     find;
+#allow untrusted_app     gas_srv_service:service_manager     find;

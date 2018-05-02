@@ -34,8 +34,8 @@ binder_call(ipod, system_server)
 binder_call(ipod, surfaceflinger)
 
 allow ipod ctl_bootanim_prop:property_service set;
-allow ipod ctl_ipod_prop:property_service set;
-allow ipod ipod_prop:property_service set;
+#allow ipod ctl_ipod_prop:property_service set;
+#allow ipod ipod_prop:property_service set;
 allow ipod powerctl_prop:property_service set;
 allow ipod audiohal_prop:property_service set;
 allow ipod system_prop:property_service set;
@@ -102,7 +102,7 @@ allow ipod proc_lk_env:file { open read write };
 allow ipod misc_device:chr_file { open read write };
 allow ipod self:capability { chown sys_admin };
 allow ipod mtd_device:blk_file { read write open };
-allow ipod ctl_ipo_swap_prop:property_service set;
+#allow ipod ctl_ipo_swap_prop:property_service set;
 
 # Date : WK16.33
 # Purpose: Allow to access ged for gralloc_extra functions

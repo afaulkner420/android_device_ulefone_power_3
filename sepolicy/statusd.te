@@ -27,7 +27,7 @@ allow statusd radio_prop:property_service set;
 allow statusd ril_cdma_report_prop:property_service set;
 allow statusd self:capability net_admin;
 allow statusd self:udp_socket { create ioctl }; 
-allow statusd statusd_socket:sock_file { write setattr };
+#allow statusd statusd_socket:sock_file { write setattr };
 allow statusd sysfs_wake_lock:file { read write open };
 allow statusd system_data_file:dir { write add_name };
 allow statusd system_data_file:sock_file { write create setattr };
@@ -44,7 +44,7 @@ allow statusd system_prop:property_service set;
 allow statusd system_radio_prop:property_service set;
 allow statusd persist_ril_prop:property_service set;
 allow statusd ril_mux_report_case_prop:property_service set;
-allow statusd cdma_prop:property_service set;
+#allow statusd cdma_prop:property_service set;
 auditallow statusd net_radio_prop:property_service set;
 auditallow statusd system_radio_prop:property_service set;
 

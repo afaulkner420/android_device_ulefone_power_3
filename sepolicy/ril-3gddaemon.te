@@ -28,7 +28,7 @@ set_prop(ril-3gddaemon, net_radio_prop)
 set_prop(ril-3gddaemon, system_radio_prop)
 set_prop(ril-3gddaemon, system_prop)
 set_prop(ril-3gddaemon, pppoe_ppp0_prop)
-set_prop(ril-3gddaemon, ctl_zpppdgprs_prop)
+#set_prop(ril-3gddaemon, ctl_zpppdgprs_prop)
 auditallow ril-3gddaemon net_radio_prop:property_service set;
 auditallow ril-3gddaemon system_radio_prop:property_service set;
 

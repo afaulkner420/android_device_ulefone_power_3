@@ -121,4 +121,4 @@ set_prop(mtkfusionrild, mtk_telephony_sensitive_prop)
 allow mtkfusionrild debuggerd_socket:unix_stream_socket connectto;
 
 # For RIL VT to use socket
-allow mtkfusionrild cdma_prop:property_service set;
+#allow mtkfusionrild cdma_prop:property_service set;

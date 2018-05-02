@@ -40,7 +40,7 @@ auditallow mtkrildmd2 net_radio_prop:property_service set;
 auditallow mtkrildmd2 system_radio_prop:property_service set;
 set_prop(mtkrildmd2, ril_active_md_prop)
 set_prop(mtkrildmd2, persist_service_atci_prop)
-set_prop(mtkrildmd2, pppd_gprs_prop)
+#set_prop(mtkrildmd2, pppd_gprs_prop)
 # allow set muxreport control properties
 set_prop(mtkrildmd2, ril_mux_report_case_prop)
 set_prop(mtkrildmd2, ctl_muxreport-daemon_prop)

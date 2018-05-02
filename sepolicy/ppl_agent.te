@@ -49,7 +49,7 @@ allow ppl_agent nvdata_file:file create_file_perms;
 # Operation : Migration
 # Purpose : [Privacy protection lock][Allow ServiceManager add this service]
 # Package name : ServiceManager
-allow ppl_agent ppl_agent_service:service_manager add;
+#allow ppl_agent ppl_agent_service:service_manager add;
 
 # Data : 2014/10/31
 # Operation : QC

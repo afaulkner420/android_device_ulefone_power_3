@@ -38,14 +38,14 @@ allow bmm050d sensor_data_file:dir {search open read write create getattr setatt
 allow bmm050d sensor_data_file:file { open read write create append unlink ioctl getattr setattr };
 allow bmm050d system_sensor_data_file:dir { search open read create };
 allow bmm050d system_sensor_data_file:file { open read create write };
-allow bmm050d bmm050_sensor_log_file:file { open create read write };
+#allow bmm050d bmm050_sensor_log_file:file { open create read write };
 allow bmm050d sysfs:file write;
-allow bmm050d sysfs_gsensor_file:dir { search open read create };
-allow bmm050d sysfs_gsensor_file:file { open read create write };
-allow bmm050d sysfs_gsensor_file:lnk_file read;
-allow bmm050d sysfs_msensor_file:dir { search open read create };
-allow bmm050d sysfs_msensor_file:file { open read create write };
-allow bmm050d sysfs_msensor_file:lnk_file read;
+#allow bmm050d sysfs_gsensor_file:dir { search open read create };
+#allow bmm050d sysfs_gsensor_file:file { open read create write };
+#allow bmm050d sysfs_gsensor_file:lnk_file read;
+#allow bmm050d sysfs_msensor_file:dir { search open read create };
+#allow bmm050d sysfs_msensor_file:file { open read create write };
+#allow bmm050d sysfs_msensor_file:lnk_file read;
 # Operate data partation directly, need modify later,e.g. use "data/misc/sensor".
 # for msensor daemon access "data/misc".
 file_type_auto_trans(bmm050d, system_data_file, msensor_data_file)

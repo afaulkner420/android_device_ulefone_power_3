@@ -31,7 +31,7 @@ init_daemon_domain(GoogleOtaBinder)
 binder_use(GoogleOtaBinder)
 binder_service(GoogleOtaBinder)
 
-allow GoogleOtaBinder ota_agent_service:service_manager add;
+#allow GoogleOtaBinder ota_agent_service:service_manager add;
 # /dev/block/mmcblko
 allow GoogleOtaBinder para_block_device:blk_file { write read open };
 allow GoogleOtaBinder bootdevice_block_device:blk_file { write read open };
