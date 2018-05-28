@@ -639,6 +639,10 @@ on post-fs-data
 # -----------------------
 
 on boot
+
+    # default is root radio 0440
+    chmod 0644 /proc/cmdline
+
     write /proc/bootprof "INIT:boot"
 
     write /proc/sys/vm/dirty_writeback_centisecs 300
@@ -649,7 +653,7 @@ on boot
     chown system system /sys/devices/system/cpu/cpufreq/hotplug/cpu_num_base
     chmod 0660 /sys/devices/system/cpu/cpufreq/hotplug/cpu_num_base
     chown root   system /sys/kernel/debug/binder/transaction_log_enable
-    chown root   system /sys/kernel/debug/binder/perf_evalue
+    chown root   system /sys/kernel/debug/binder/perfon boot_evalue
     chown system system /sys/devices/system/cpu/rq-stats/htasks_thresh
     chmod 0660 /sys/devices/system/cpu/rq-stats/htasks_thresh
     chown system system /sys/devices/system/cpu/rq-stats/avg_htasks_thresh
@@ -1864,20 +1868,20 @@ on property:sys.boot_completed=1
 
 #Fingerprint service
 
-# goodix fingerprint
-on fs
-    chown system system /dev/goodix_fp
+## goodix fingerprint
+#on fs
+#    chown system system /dev/goodix_fp
 
-service goodixfpd /system/bin/goodixfingerprintd
-    class late_start
-    user system
-    group media_rw system
+#service goodixfpd /system/bin/goodixfingerprintd
+#    class late_start
+#    user system
+#    group media_rw system
 
-service fingerprintd /system/bin/fingerprintd
-    class late_start
-    user system
-    group system
-# goodix fingerprint end
+#service fingerprintd /system/bin/fingerprintd
+#    class late_start
+#    user system
+#    group system
+## goodix fingerprint end
 
 # FPSGO FBT Game
 on init
