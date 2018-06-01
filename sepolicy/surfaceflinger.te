@@ -1,16 +1,24 @@
-# PQ
-allow surfaceflinger pq_service:service_manager find;
+# ==============================================
+# MTK Policy Rule
+# ============
 
-# Gui-Ext
-allow surfaceflinger guiext-server_service:service_manager { find add };
-
+# Data : WK14.42
+# Operation : Migration
+# Purpose : Video playback
+allow surfaceflinger sw_sync_device:chr_file { rw_file_perms };
 allow surfaceflinger debug_prop:property_service set;
 
-# SMI
-allow surfaceflinger mtk_smi_device:chr_file { read write open ioctl };
+# Data : WK16.25
+# Operation : N0 UT
+# Purpose : allow debuggerd dumpsys surfaceflinger
+allow surfaceflinger debuggerd:fifo_file write;
 
-# boot_mode
-allow surfaceflinger sysfs_boot_mode:file r_file_perms;
+# Date : WK16.33
+# Purpose: Allow to access ged for gralloc_extra functions
+allow surfaceflinger proc_ged:file {open read write ioctl getattr};
 
-# dev_info
-allow surfaceflinger sysfs_devinfo:file r_file_perms;
+# Date : W16.42
+# Operation : Integration
+# Purpose : DRM / DRI GPU driver required
+
+allow surfaceflinger gpu_device:dir search;

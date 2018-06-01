@@ -31,7 +31,7 @@ static bool ensure_vendor_module_is_loaded(void)
     android::Mutex::Autolock lock(vendor_mutex);
 
     if (!vendor.module) {
-        if (!access("/dev/sunwave_fp", F_OK)) {
+        if (!access("/dev/sunwave_tee", F_OK)) {
             rv = hw_get_module("sunwave.fingerprint", &vendor.hw_module);
         } else if (!access("/dev/goodix_fp", F_OK)) {
             rv = hw_get_module("fingerprint", &vendor.hw_module);
@@ -162,7 +162,7 @@ static int device_open(const hw_module_t *module, const char *name, hw_device_t 
     }
 
     device->base.common.tag = HARDWARE_DEVICE_TAG;
-    device->base.common.version = FINGERPRINT_MODULE_API_VERSION_2_0;
+    device->base.common.version = FINGERPRINT_MODULE_API_VERSION_2_1;
     device->base.common.module = (hw_module_t *) module;
     device->base.common.close = device_close;
 
@@ -188,7 +188,7 @@ static struct hw_module_methods_t module_methods = {
 fingerprint_module_t HAL_MODULE_INFO_SYM = {
     .common = {
         .tag = HARDWARE_MODULE_TAG,
-        .module_api_version = FINGERPRINT_MODULE_API_VERSION_2_0,
+        .module_api_version = FINGERPRINT_MODULE_API_VERSION_2_1,
         .hal_api_version = HARDWARE_HAL_API_VERSION,
         .id = FINGERPRINT_HARDWARE_MODULE_ID,
         .name = "Fingerprint Wrapper",

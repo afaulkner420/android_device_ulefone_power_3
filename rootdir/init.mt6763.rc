@@ -639,6 +639,10 @@ on post-fs-data
 # -----------------------
 
 on boot
+
+    # default is root radio 0440
+    chmod 0644 /proc/cmdline
+
     write /proc/bootprof "INIT:boot"
 
     write /proc/sys/vm/dirty_writeback_centisecs 300
@@ -1864,20 +1868,20 @@ on property:sys.boot_completed=1
 
 #Fingerprint service
 
-# goodix fingerprint
-on fs
-    chown system system /dev/goodix_fp
+## goodix fingerprint
+#on fs
+#    chown system system /dev/goodix_fp
 
-service goodixfpd /system/bin/goodixfingerprintd
-    class late_start
-    user system
-    group media_rw system
+#service goodixfpd /system/bin/goodixfingerprintd
+#    class late_start
+#    user system
+#    group media_rw system
 
-service fingerprintd /system/bin/fingerprintd
-    class late_start
-    user system
-    group system
-# goodix fingerprint end
+#service fingerprintd /system/bin/fingerprintd
+#    class late_start
+#    user system
+#    group system
+## goodix fingerprint end
 
 # FPSGO FBT Game
 on init
