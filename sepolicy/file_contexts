@@ -326,6 +326,8 @@
 /dev/mbim u:object_r:mbim_device:s0
 /dev/st21nfc u:object_r:st21nfc_device:s0
 /dev/bl229x u:object_r:bl229x_device:s0
+/dev/radio(/.*)? u:object_r:radio_device:s0
+
 ##########################
 # Sensor common Devices Start
 #
